@@ -26,26 +26,31 @@ public class MainActivity extends AppCompatActivity {
 
         if(days <= 0)
         {
-            Toast.makeText(getApplicationContext(),"-1 (please enter more than 1)",Toast.LENGTH_SHORT).show();
+           resultsLabel.setText("-1");
+            //Toast.makeText(getApplicationContext(),"-1 (please enter more than 1)",Toast.LENGTH_SHORT).show();
         }
-else if (days <= 1 && days >= 7)
+else if (days >= 1 && days <= 7)
         {
-            days = days * 5;
+            int days1 = days * 5;
             until5 = days;
-            Toast.makeText(getApplicationContext(),days,Toast.LENGTH_SHORT).show();
+            String str1 = Integer.toString(days1);
+            resultsLabel.setText(str1);
+           // Toast.makeText(getApplicationContext(),days,Toast.LENGTH_SHORT).show();
 
         }
 else if ( days >= 8)
         {
             days  = days + until5;
             days = days * 8;
-            Toast.makeText(getApplicationContext(),days,Toast.LENGTH_SHORT).show();
+            String str1 = Integer.toString(days);
+            resultsLabel.setText(str1);
+           // Toast.makeText(getApplicationContext(),days,Toast.LENGTH_SHORT).show();
         }
 
-//        // uncomment this code when you do your UI tests
-//        Infection infection = new Infection();
-//        int numInfected = infection.calculateTotalInfected(days);
-//        resultsLabel.setText(String.valueOf(numInfected) + " instructors infected");
+// uncomment this code when you do your UI tests
+        Infection infection = new Infection();
+        int numInfected = infection.calculateTotalInfected(days);
+        resultsLabel.setText(String.valueOf(numInfected) + " instructors infected");
 
     }
 }
