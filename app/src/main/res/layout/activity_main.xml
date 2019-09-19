@@ -8,10 +8,11 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="26sp"
-        android:text="Infection Calculator" />
+        android:text="Infection Calculator"
+        android:textSize="26sp" />
 
     <TextView
         android:layout_width="wrap_content"
