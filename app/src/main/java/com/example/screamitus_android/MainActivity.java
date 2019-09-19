@@ -22,17 +22,25 @@ public class MainActivity extends AppCompatActivity {
         int days = Integer.parseInt(tbDays.getText().toString());
 
         String nothing = "-1";
+        int until5 = 0;
 
-        if(days >= 0)
+        if(days <= 0)
         {
             Toast.makeText(getApplicationContext(),"-1 (please enter more than 1)",Toast.LENGTH_SHORT).show();
         }
 else if (days <= 1 && days >= 7)
         {
             days = days * 5;
+            until5 = days;
+            Toast.makeText(getApplicationContext(),days,Toast.LENGTH_SHORT).show();
 
         }
-
+else if ( days >= 8)
+        {
+            days  = days + until5;
+            days = days * 8;
+            Toast.makeText(getApplicationContext(),days,Toast.LENGTH_SHORT).show();
+        }
 
 //        // uncomment this code when you do your UI tests
 //        Infection infection = new Infection();
